@@ -1,0 +1,57 @@
+{
+  "name": "ngx-form-deps",
+  "version": "0.1.0",
+  "description": "Declarative dependency rules for Angular reactive forms: clear, enable, disable, patch, toggle validators, and run side effects on one control based on another's value.",
+  "keywords": [
+    "angular",
+    "angular-forms",
+    "reactive-forms",
+    "form-validation",
+    "forms",
+    "validators",
+    "dependencies",
+    "ngx",
+    "rxjs"
+  ],
+  "license": "MIT",
+  "author": "olegius <olegius2296@gmail.com>",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "build:watch": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=17.0.0",
+    "@angular/forms": ">=17.0.0",
+    "rxjs": ">=7.0.0"
+  },
+  "devDependencies": {
+    "@angular/compiler": "^18.2.14",
+    "@angular/core": "^18.2.14",
+    "@angular/forms": "^18.2.14",
+    "@angular/platform-browser-dynamic": "^18.2.14",
+    "jsdom": "^29.0.2",
+    "rimraf": "^5.0.0",
+    "rxjs": "^7.8.0",
+    "typescript": "^5.0.0",
+    "vitest": "^4.1.5"
+  }
+}
