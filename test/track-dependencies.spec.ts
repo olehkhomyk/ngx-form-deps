@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { DependencyType, trackDependencies, clearOnFalseRule, requiredRule, toggleByBooleanRules } from '../src';
+import { DependencyType, trackDependencies, clearOnFalseRule, toggleByBooleanRules } from '../src';
 
 describe('trackDependencies', () => {
 	let destroyRef: DestroyRef;
