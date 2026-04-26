@@ -1,11 +1,9 @@
-import { Match } from '../type/dependency.js';
-
 export function isNil(value: unknown): boolean {
 	return value == null || typeof value === 'undefined';
 }
 
-export function isEmpty<T>(match: Match<T> | undefined): boolean {
-	return match == null || Object.keys(match).length === 0;
+export function isEmpty(value: object | null | undefined): boolean {
+	return value == null || Object.keys(value).length === 0;
 }
 
 export function deepEqual(a: unknown, b: unknown): boolean {

@@ -14,7 +14,7 @@
     "rxjs"
   ],
   "license": "MIT",
-  "author": "olegius <olegius2296@gmail.com>",
+  "author": "okhomyk <oleh.khomyk@gmail.com>",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -35,6 +35,7 @@
     "build": "rimraf dist && tsc",
     "build:watch": "tsc --watch",
     "test": "vitest run",
+    "test:verbose": "vitest run --reporter=verbose",
     "test:watch": "vitest",
     "prepublishOnly": "npm run build"
   },

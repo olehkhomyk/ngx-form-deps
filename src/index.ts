@@ -34,7 +34,10 @@ export {
 } from './constant/default-dependencies.js';
 
 export function shouldPerformAction<T>(controlValue: T, match: Match<T> | undefined): boolean {
-	if (isEmpty(match)) return false;
+	if (isEmpty(match) || isNil(match)) {
+		return false;
+	}
+
 	return Boolean(
 		(match!.ifValueExists && Boolean(controlValue)) ||
 		(match!.ifValueNotExists && !controlValue) ||
