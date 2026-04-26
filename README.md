@@ -20,10 +20,10 @@ Peer requirements: `@angular/core >= 17`, `@angular/forms >= 17`, `rxjs >= 7`.
 
 ```ts
 import { Component, DestroyRef, inject } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import {
   trackDependencies,
-  toggleByPresenceRules,
+  toggleByBooleanRules,
   clearOnFalseRule,
   requiredRule,
 } from 'ngx-form-deps';
@@ -37,21 +37,25 @@ export class ShippingFormComponent {
   shippingCity = new FormControl('');
 
   ngOnInit() {
+    const dependantControls = [this.shippingStreet, this.shippingCity];
+
+    const dependencies = [
+      ...toggleByBooleanRules,
+      clearOnFalseRule,
+      { ...requiredRule, match: { valueToMatch: true } },
+    ];
+
     trackDependencies(
       this.hasShippingAddress,
-      [this.shippingStreet, this.shippingCity],
-      [
-        ...toggleByPresenceRules,
-        clearOnFalseRule,
-        { ...requiredRule, match: { ifValueExists: true } },
-      ],
+      dependantControls,
+      dependencies,
       this.destroyRef
     );
   }
 }
 ```
 
-When `hasShippingAddress` is truthy, the street and city fields are enabled and marked required. When it flips to `false`, they are cleared, disabled, and `required` is removed.
+When `hasShippingAddress` is `true`, the street and city fields are enabled and marked required. When it flips to `false`, they are cleared, disabled, and `required` is removed.
 
 ## Core concepts
 
