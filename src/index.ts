@@ -102,6 +102,7 @@ function handleDependency<T>(
 			if (typeof customHandler === 'function') {
 				customHandler(controlValue);
 			}
+			break;
 		default:
 			console.warn(`Unknown dependency type: ${type as string}`);
 			break;
