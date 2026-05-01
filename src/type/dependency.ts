@@ -13,7 +13,7 @@ import { DependencyType } from '../enum/dependency.js';
  *
  * @typeParam T - Value type of the main control the rule is applied against.
  */
-export interface Dependency<T = unknown> {
+export interface Dependency<T = any> {
 	/** Action performed when {@link match} is satisfied. */
 	type: DependencyType;
 	/** Predicate describing when the action should run. */
@@ -43,7 +43,7 @@ export interface Dependency<T = unknown> {
  *
  * @typeParam T - Value type of the main control.
  */
-export interface Match<T> {
+export interface Match<T = any> {
 	/** Fires when the main control's value is truthy. */
 	ifValueExists?: boolean;
 	/** Fires when the main control's value is falsy. */
@@ -66,7 +66,7 @@ export interface Match<T> {
  *
  * @typeParam T - Value type of the main control being tracked.
  */
-export interface DependencyHandlerOptions<T = unknown> {
+export interface DependencyHandlerOptions<T = any> {
 	/**
 	 * When `true` (the default) the rules are evaluated once with the
 	 * main control's current raw value before subscribing to

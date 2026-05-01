@@ -127,7 +127,7 @@ function handleDependency<T>(
  * @param dependencies - Rules to evaluate.
  * @param options - Global options merged into each rule's action options.
  */
-export function applyDependencies<T>(
+export function applyDependencies<T = any>(
 	controlValue: T,
 	dependantControls: AbstractControl[],
 	dependencies: Dependency<T>[],
@@ -166,8 +166,8 @@ export function applyDependencies<T>(
  * @param options - Options controlling initial emission, upstream piping, and default action options.
  * @returns Subscription for early manual teardown.
  */
-export function trackDependencies<T>(
-	mainControl: AbstractControl,
+export function trackDependencies<T = any>(
+	mainControl: AbstractControl<T>,
 	dependantControls: AbstractControl[] | ((controlValue: T) => AbstractControl[]),
 	dependencies: Dependency<T>[] | ((controlValue: T) => Dependency<T>[]),
 	destroyRef: DestroyRef,

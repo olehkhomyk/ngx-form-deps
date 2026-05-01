@@ -1,6 +1,6 @@
 {
   "name": "ngx-form-deps",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Declarative dependency rules for Angular reactive forms: clear, enable, disable, patch, toggle validators, and run side effects on one control based on another's value.",
   "keywords": [
     "angular",
