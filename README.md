@@ -93,7 +93,8 @@ The first satisfied branch wins. Order of evaluation:
 | `REQUIRED`          | Toggle `Validators.required`                        |
 | `CUSTOM_VALIDATOR`  | Add / remove user validators                        |
 | `SET_VALUE`         | Write `match.valueToSet` into target controls       |
-| `CUSTOM_HANDLER`    | Invoke `customHandler(controlValue)`                |
+| `CUSTOM_HANDLER`    | Invoke `customHandler(controlValue)` when `match` passes |
+| `ON_CHANGE`         | Invoke `customHandler(controlValue)` on every emission, no `match` needed |
 
 ## Preset rules
 
@@ -110,7 +111,8 @@ Import ready-made rule objects instead of building them by hand. Spread them int
 | `toggleByBooleanInverseRules`   | Enable on `false`, disable on `true`                      |
 | `requiredRule`                  | Marker for toggling `Validators.required`                 |
 | `setValueRule`                  | Marker for patching a value                               |
-| `customHandlerRule`             | Marker for a side effect                                  |
+| `customHandlerRule`             | Marker for a conditional side effect                      |
+| `onChangeRule`                  | Marker for a side effect on every emission                |
 | `customValidatorRule`           | Marker for custom validators                              |
 
 ## API

@@ -111,6 +111,16 @@ export const customHandlerRule: Dependency = {
 };
 
 /**
+ * Marker rule for running a side effect callback on every emission
+ * of the main control, regardless of any `match`. Useful when the
+ * callback itself decides what to do with the value (logging,
+ * analytics, syncing to external state).
+ */
+export const onChangeRule: Dependency = {
+	type: DependencyType.ON_CHANGE
+};
+
+/**
  * Default action options used when no override is provided. Suppresses
  * the value/status change event emission so rule chains do not cause
  * cascading `valueChanges` updates.

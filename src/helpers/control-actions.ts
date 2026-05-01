@@ -1,5 +1,5 @@
 import { AbstractControl, ValidatorFn, Validators } from "@angular/forms";
-import { ActionOptions } from "../type/dependency";
+import { ActionOptions } from '../type/dependency.js';
 
 /**
  * Resets each control's value to `null`.

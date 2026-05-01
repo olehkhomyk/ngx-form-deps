@@ -6,7 +6,7 @@ import { distinctUntilChanged, tap } from 'rxjs/operators';
 import { Dependency, DependencyHandlerOptions, Match } from './type/dependency.js';
 import { DependencyType } from './enum/dependency.js';
 import { defaultActionOptions } from './constant/default-dependencies.js';
-import { deepEqual, isEmpty, isNil } from './utils/object.utils';
+import { deepEqual, isEmpty, isNil } from './utils/object.utils.js';
 import {
 	addControlsValidators, clearControls,
 	disableControls,
@@ -14,7 +14,7 @@ import {
 	patchControls,
 	removeControlsValidators,
 	setControlsRequired
-} from "./helpers/control-actions";
+} from './helpers/control-actions.js';
 
 export { DependencyType } from './enum/dependency.js';
 export type { ActionOptions, Dependency, DependencyHandlerOptions, Match } from './type/dependency.js';
@@ -29,6 +29,7 @@ export {
 	requiredRule,
 	setValueRule,
 	customHandlerRule,
+	onChangeRule,
 	customValidatorRule,
 	defaultActionOptions
 } from './constant/default-dependencies.js';
